@@ -147,6 +147,9 @@
                                     <segment title="Hybrid"/>
                                     <segment title="Satellite"/>
                                 </segments>
+                                <connections>
+                                    <action selector="mapChangeType:" destination="3tM-eH-5fX" eventType="valueChanged" id="sov-pf-8BH"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Kyn-0m-x13"/>
@@ -161,6 +164,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="SB1-jo-de2"/>
+                    <connections>
+                        <outlet property="mapView" destination="e2y-dS-Hhc" id="vap-S2-ixU"/>
+                        <outlet property="switchMapType" destination="WeP-ua-ypq" id="G3o-PX-F9L"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="842" y="-923"/>

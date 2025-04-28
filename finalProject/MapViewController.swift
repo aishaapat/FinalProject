@@ -6,24 +6,35 @@
 //
 
 import UIKit
+import MapKit
 
 class MapViewController: UIViewController {
 
+    @IBOutlet weak var mapView: MKMapView!
+    
+    @IBOutlet weak var switchMapType: UISegmentedControl!
+    @IBAction func mapChangeType(_ sender: UISegmentedControl) {
+        switch switchMapType.selectedSegmentIndex {
+        case 0:
+            mapView.mapType = .standard
+        case 1:
+            mapView.mapType = .hybrid
+        case 2:
+            mapView.mapType = .satellite
+        default:
+            break
+        }
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        mapView.setUserTrackingMode(.follow, animated: true)
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
