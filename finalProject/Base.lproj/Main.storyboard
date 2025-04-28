@@ -140,12 +140,22 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="702"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WeP-ua-ypq">
+                                <rect key="frame" x="83" y="94" width="227" height="32"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Hybrid"/>
+                                    <segment title="Satellite"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Kyn-0m-x13"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="WeP-ua-ypq" firstAttribute="top" secondItem="Kyn-0m-x13" secondAttribute="top" constant="35" id="BXd-0y-eFQ"/>
                             <constraint firstItem="Kyn-0m-x13" firstAttribute="trailing" secondItem="e2y-dS-Hhc" secondAttribute="trailing" id="Y5h-zI-5NW"/>
                             <constraint firstItem="e2y-dS-Hhc" firstAttribute="leading" secondItem="Kyn-0m-x13" secondAttribute="leading" id="fvw-yz-QJI"/>
+                            <constraint firstItem="WeP-ua-ypq" firstAttribute="centerX" secondItem="FYG-Rb-Day" secondAttribute="centerX" id="oBY-Df-zGC"/>
                             <constraint firstItem="e2y-dS-Hhc" firstAttribute="top" secondItem="Kyn-0m-x13" secondAttribute="top" id="osv-lf-hmc"/>
                             <constraint firstItem="Kyn-0m-x13" firstAttribute="bottom" secondItem="e2y-dS-Hhc" secondAttribute="bottom" constant="8" id="xs3-qC-LPN"/>
                         </constraints>
