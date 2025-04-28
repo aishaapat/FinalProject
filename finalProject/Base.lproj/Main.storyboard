@@ -91,11 +91,18 @@
                                         <rect key="frame" x="0.0" y="162" width="363" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Select Photo"/>
+                                        <connections>
+                                            <action selector="openCamera:" destination="f3R-Zm-Y8k" eventType="touchUpInside" id="XdS-gR-fAJ"/>
+                                            <action selector="openCameraRoll:" destination="f3R-Zm-Y8k" eventType="touchUpInside" id="kG4-4i-CaY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0A-AR-qHw">
                                         <rect key="frame" x="0.0" y="216.33333333333331" width="363" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Take Photo"/>
+                                        <connections>
+                                            <action selector="openCamera:" destination="f3R-Zm-Y8k" eventType="touchUpInside" id="MAb-Zw-fCH"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

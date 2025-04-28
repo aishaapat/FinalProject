@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditViewViewController: UIViewController {
+class EditViewViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!
@@ -22,6 +22,19 @@ class EditViewViewController: UIViewController {
     @IBOutlet weak var takePhotoButton: UIButton!
     
     
+    @IBAction func openCameraRoll(_ sender: UIButton) {
+        let picker = UIImagePickerController()
+           picker.sourceType = .photoLibrary
+           picker.delegate = self
+           present(picker, animated: true, completion: nil)
+    }
+    
+    @IBAction func openCamera(_ sender: UIButton) {
+        let picker = UIImagePickerController()
+               picker.sourceType = .camera
+               picker.delegate = self
+               present(picker, animated: true, completion: nil)
+    }
     
     @IBAction func changeEditMode(_ sender: UISegmentedControl) {
         let textFields: [UITextField] = [nameField, latitudeField, longitudeField]
