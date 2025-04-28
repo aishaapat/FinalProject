@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import MapKit
 
 
 class MapPoint: NSObject, MKAnnotation {
@@ -14,5 +14,13 @@ class MapPoint: NSObject, MKAnnotation {
     var photo: String?
     var longitude: Double
     var latitude: Double
-
+    
+    var coordinate: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
+    
+    init (longitude: Double, latitude: Double){
+        self.longitude = longitude
+        self.latitude = latitude
+    }
 }
