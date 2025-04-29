@@ -1,17 +1,35 @@
 //
-//  AddressTableViewController.swift
+//  TableTableViewController.swift
 //  finalProject
 //
-//  Created by Amishi Patel on 4/29/25.
+//  Created by Alex Bringuel on 4/29/25.
 //
 
 import UIKit
+import CoreData
 
-class AddressTableViewController: UITableViewController {
+class TableTableViewController: UITableViewController {
+    var addresses: [Address] = []
+    
+    func loadData() {
+        // Fetch Address objects from Core Data
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+
+        let fetchRequest: NSFetchRequest<Address> = Address.fetchRequest()
+        do {
+            addresses = try context.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Failed to fetch Address: \(error), \(error.userInfo)")
+        }
+
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadData()
+        tableView.reloadData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,23 +41,23 @@ class AddressTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return addresses.count
     }
 
-    /*
+   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlacesCell", for: indexPath)
+        
+        cell.textLabel?.text = addresses[indexPath.row].name
+        
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -76,14 +94,5 @@ class AddressTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

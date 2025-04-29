@@ -3,6 +3,7 @@ import CoreLocation
 import MapKit
 import CoreData
 
+
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager!
