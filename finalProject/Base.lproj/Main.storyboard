@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Places-->
         <scene sceneID="YFG-v2-zaF">
             <objects>
                 <tableViewController id="Uj4-xc-2va" customClass="TableTableViewController" customModule="finalProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,7 +32,9 @@
                             <outlet property="delegate" destination="Uj4-xc-2va" id="qsG-is-oMk"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="o0h-Vg-lix"/>
+                    <tabBarItem key="tabBarItem" title="Places" id="o0h-Vg-lix"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gn-vI-4pc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -164,7 +166,7 @@
                             <constraint firstItem="iRd-Ck-geD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0u5-Oq-EB9" secondAttribute="leading" constant="20" symbolic="YES" id="nxR-Qt-l6m"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="L6C-5M-b45"/>
+                    <tabBarItem key="tabBarItem" title="Edit Places" id="L6C-5M-b45"/>
                     <connections>
                         <outlet property="imageData" destination="xbg-wJ-sVR" id="6Hs-JI-E9L"/>
                         <outlet property="latitudeField" destination="zHy-2a-VoM" id="Vc6-8K-YWk"/>
@@ -218,7 +220,7 @@
                             <constraint firstItem="Kyn-0m-x13" firstAttribute="bottom" secondItem="e2y-dS-Hhc" secondAttribute="bottom" constant="8" id="xs3-qC-LPN"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="SB1-jo-de2"/>
+                    <tabBarItem key="tabBarItem" title="Map" id="SB1-jo-de2"/>
                     <connections>
                         <outlet property="mapView" destination="e2y-dS-Hhc" id="vap-S2-ixU"/>
                         <outlet property="switchMapType" destination="WeP-ua-ypq" id="G3o-PX-F9L"/>
