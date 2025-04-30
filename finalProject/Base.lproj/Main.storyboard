@@ -146,9 +146,9 @@
                                 <rect key="frame" x="88" y="439" width="240" height="128"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRd-Ck-geD">
-                                <rect key="frame" x="312.33333333333331" y="75" width="65.666666666666686" height="34.333333333333343"/>
+                                <rect key="frame" x="317" y="115.99999999999999" width="61" height="34.333333333333329"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Save!"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
                                 <connections>
                                     <action selector="buttonSave:" destination="f3R-Zm-Y8k" eventType="touchUpInside" id="JrU-ee-xdl"/>
                                 </connections>
@@ -160,7 +160,7 @@
                             <constraint firstItem="t9s-KX-5vS" firstAttribute="trailing" secondItem="kcl-tz-FsZ" secondAttribute="trailing" constant="15" id="1kp-Uq-ySg"/>
                             <constraint firstItem="xbg-wJ-sVR" firstAttribute="top" secondItem="kcl-tz-FsZ" secondAttribute="bottom" constant="24.333333333333371" id="2Fx-tD-LMc"/>
                             <constraint firstItem="t9s-KX-5vS" firstAttribute="bottom" secondItem="xbg-wJ-sVR" secondAttribute="bottom" constant="153" id="6z1-5x-F9D"/>
-                            <constraint firstItem="iRd-Ck-geD" firstAttribute="top" secondItem="0u5-Oq-EB9" secondAttribute="top" constant="75" id="9Th-4O-z1I"/>
+                            <constraint firstItem="iRd-Ck-geD" firstAttribute="top" secondItem="t9s-KX-5vS" secondAttribute="top" constant="13" id="7ew-BM-DOZ"/>
                             <constraint firstItem="kcl-tz-FsZ" firstAttribute="leading" secondItem="t9s-KX-5vS" secondAttribute="leading" constant="15" id="Ank-5Z-Dly"/>
                             <constraint firstItem="zWk-vB-UEU" firstAttribute="centerX" secondItem="0u5-Oq-EB9" secondAttribute="centerX" id="BMh-rY-XPr"/>
                             <constraint firstAttribute="trailing" secondItem="iRd-Ck-geD" secondAttribute="trailing" constant="15" id="DCE-V3-lCS"/>

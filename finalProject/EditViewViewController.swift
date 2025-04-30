@@ -101,6 +101,7 @@ class EditViewViewController: UIViewController, UIImagePickerControllerDelegate 
         for textfield in textFields {
             textfield.addTarget(self, action: #selector(self.textFieldDidEndEditing(_:)), for: .editingDidEnd)
         }
+    
 
         if currentAddress != nil {
             nameField.text = currentAddress!.name
@@ -109,8 +110,10 @@ class EditViewViewController: UIViewController, UIImagePickerControllerDelegate 
             if let imageDataStored = currentAddress?.image {
                 imageData.image = UIImage(data: imageDataStored)
             }
+            
+            viewEditSwitch.selectedSegmentIndex = 1
         }
-
+        
         changeEditMode(viewEditSwitch)
     }
 
