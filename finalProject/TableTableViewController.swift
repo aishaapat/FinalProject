@@ -10,6 +10,8 @@ import CoreData
 
 class TableTableViewController: UITableViewController {
     var places: [Address] = []
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
     
     func loadData() {
         // Fetch Address objects from Core Data
@@ -27,6 +29,7 @@ class TableTableViewController: UITableViewController {
     
 
     override func viewDidLoad() {
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
         super.viewDidLoad()
         loadData()
         tableView.reloadData()
@@ -67,6 +70,25 @@ class TableTableViewController: UITableViewController {
             editController.currentAddress = selectedPlace
         }
     }
+    override func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCell.EditingStyle,
+                            forRowAt indexPath: IndexPath){
+        if editingStyle == .delete {
+            let address = places[indexPath.row] as? Address
+            let context = appDelegate.persistentContainer.viewContext
+            context.delete(address!)
+            do {
+                try context.save()
+            } catch {
+                fatalError("Error saving context: \(error)")
+                
+            }
+            loadData()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -84,7 +106,7 @@ class TableTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
