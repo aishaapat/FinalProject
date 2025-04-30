@@ -32,7 +32,7 @@
                             <outlet property="delegate" destination="Uj4-xc-2va" id="qsG-is-oMk"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Places" id="o0h-Vg-lix"/>
+                    <tabBarItem key="tabBarItem" title="Places" image="location.fill" catalog="system" id="o0h-Vg-lix"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
@@ -166,7 +166,7 @@
                             <constraint firstItem="iRd-Ck-geD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0u5-Oq-EB9" secondAttribute="leading" constant="20" symbolic="YES" id="nxR-Qt-l6m"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Edit Places" id="L6C-5M-b45"/>
+                    <tabBarItem key="tabBarItem" title="Edit Places" image="plus" catalog="system" id="L6C-5M-b45"/>
                     <connections>
                         <outlet property="imageData" destination="xbg-wJ-sVR" id="6Hs-JI-E9L"/>
                         <outlet property="latitudeField" destination="zHy-2a-VoM" id="Vc6-8K-YWk"/>
@@ -220,7 +220,7 @@
                             <constraint firstItem="Kyn-0m-x13" firstAttribute="bottom" secondItem="e2y-dS-Hhc" secondAttribute="bottom" constant="8" id="xs3-qC-LPN"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="SB1-jo-de2"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="SB1-jo-de2"/>
                     <connections>
                         <outlet property="mapView" destination="e2y-dS-Hhc" id="vap-S2-ixU"/>
                         <outlet property="switchMapType" destination="WeP-ua-ypq" id="G3o-PX-F9L"/>
@@ -251,6 +251,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="location.fill" catalog="system" width="128" height="119"/>
+        <image name="map" catalog="system" width="128" height="112"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
