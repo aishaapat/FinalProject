@@ -25,6 +25,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="f3R-Zm-Y8k" kind="show" identifier="EditPlaces" trigger="accessoryAction" id="LrY-08-ysY"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -33,7 +36,9 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Places" id="ZrQ-fr-Szg"/>
+                    <navigationItem key="navigationItem" title="Places" id="ZrQ-fr-Szg">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="u0Z-zq-EBc"/>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gn-vI-4pc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -138,7 +143,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xbg-wJ-sVR">
-                                <rect key="frame" x="88" y="439" width="240" height="177"/>
+                                <rect key="frame" x="88" y="439" width="240" height="128"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRd-Ck-geD">
                                 <rect key="frame" x="312.33333333333331" y="75" width="65.666666666666686" height="34.333333333333343"/>
@@ -308,6 +313,9 @@
             <point key="canvasLocation" x="29.770992366412212" y="391.54929577464793"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="LrY-08-ysY"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="location.fill" catalog="system" width="128" height="119"/>
         <image name="map" catalog="system" width="128" height="112"/>

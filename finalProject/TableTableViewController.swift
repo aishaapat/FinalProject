@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 
 class TableTableViewController: UITableViewController {
-    var addresses: [Address] = []
+    var places: [Address] = []
     
     func loadData() {
         // Fetch Address objects from Core Data
@@ -18,7 +18,7 @@ class TableTableViewController: UITableViewController {
 
         let fetchRequest: NSFetchRequest<Address> = Address.fetchRequest()
         do {
-            addresses = try context.fetch(fetchRequest)
+            places = try context.fetch(fetchRequest)
         } catch let error as NSError {
             print("Failed to fetch Address: \(error), \(error.userInfo)")
         }
@@ -46,17 +46,26 @@ class TableTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return addresses.count
+        return places.count
     }
 
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlacesCell", for: indexPath)
         
-        cell.textLabel?.text = addresses[indexPath.row].name
-        
+        cell.textLabel?.text = places[indexPath.row].name
+        cell.accessoryType = .detailDisclosureButton
 
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EditPlaces" {
+            let editController = segue.destination as! EditViewViewController
+            let selectedRow = self.tableView.indexPath(for: sender as! UITableViewCell)?.row
+            let selectedPlace = places[selectedRow!] as Address
+            editController.currentAddress = selectedPlace
+        }
     }
 
     /*
